@@ -42,7 +42,7 @@ catch (Exception $e) {
 # Performs the query and returns XML or JSON
 try {
   if($source=="" && $target==""){
-	$sql = "select " . $fields . "    from  ". $geotable." ORDER BY gid ASC limit 5000 ";
+	$sql = "select " . $fields . "   from  ". $geotable." ORDER BY gid ASC limit 9000 ";
 	if (strlen(trim($parameters)) > 0) {$sql .= " where " . $parameters;}
 	$sql = sanitizeSQL($sql);
 	//echo $sql;
@@ -58,7 +58,7 @@ try {
     //This is the SQL query that joins the results of the shortest_path() query with the roads table to get the
     //associated geometries that comprise our shortest path
 
-    $sql = "select ".$fields."  from  ".$geotable."
+    $sql = "select ".$fields." from  ".$geotable."
             join (select * from shortest_path('".$innerSql."', ".$source.", ".$target.", false, false)) as route
             on ".$geotable.".gid = route.edge_id";
 

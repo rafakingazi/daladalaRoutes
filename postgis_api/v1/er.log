@@ -281,3 +281,115 @@ gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
 gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
 gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
 gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,length,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,r_placenam,speed,r_stname_c,source,target,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json
+gid,st_asgeojson(st_transform(the_geom,4617)) as geojson_nrnbc90roadseg__json
+gid,length_nrnbc90roadseg__json

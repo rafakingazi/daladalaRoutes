@@ -40,19 +40,10 @@ demo {
 <div class="container">
 <div class="row-fluid" >
 <div class="span2">
-<!--
-//shortested path query
- //This is the inner SQL query we need to pass to shortest_path()
-
-    $innerSql = "select gid as id, source::integer, target::integer, length::double precision as cost from roads";
-
-    //This is the SQL query that joins the results of the shortest_path() query with the roads table to get the
-    //associated geometries that comprise our shortest path
-
-    $sql = "select gid, the_geom from roads
-            join (select * from shortest_path('$innerSql', $sourceId, $targetId, false, false)) as route
-            on roads.gid = route.edge_id";
--->
+<div id='clocation'>
+</div>
+<div id='destination'>
+</div>
 <p id='tester'></p>
 </div>
 <div class="span10  demo">
@@ -117,8 +108,9 @@ $.ajax({
     },
     dataType: "json",
     success: function(data) {
-        $.each(data, function(i, row) {
-            console.log(row);
+        $.each(data, function(i, mydatas) {
+
+            console.log(mydatas);
         });
         return data;
     },
@@ -131,12 +123,12 @@ $.ajax({
 
 var ids=new Array(),mytarget=new Array(),mysource=new Array();
 
-var i=0,text="<p>hapo vipi  ",tag=0,sos=0;
+var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
 
  $(document).ready(function() {
 
 //var map = L.map('map-container-1').setView([52.9089, -124.4531], 13);
-//var geos=getGeoJSON(4617,"nrnbc90roadseg","gid","","",false,"","json","");
+//var geos=getGeoJSON(4617,"nrnbc90roadseg","gid,length","","",false,"","json","");
    //document.getElementById("tester").innerHTML=geos.row.geojson;
                 map1 = new L.Map("map-container-1", {
                     center: new L.LatLng(54.5721,-124.4531),
@@ -175,42 +167,51 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0;
          kino = new lvector.PRWSF({
                     url: "http://localhost/postgis_api",
                     geotable: "nrnbc90roadseg",
-                    fields: "gid,source,target",
+                    fields: "gid,r_placenam,speed,r_stname_c,source,target",
                     uniqueField: "gid",
                     srid:4629,
                     showAll: true,
                      symbology: {
                         type: "single",
                         vectorOptions: {
-
-                            weight: 3,
-                            color: "#000000",
+                             strokeWeight: 1.8,
+                          strokeColor: "#2f4a00",
+                                strokeOpacity: 1,
+                            weight: 5,
+                            color: "#edffcc",
                             opacity: 1,
                             clickable: true
                         }
                     },
                     clickEvent: function (feature, event) {
+
         alert("gid is"+feature.properties.source+"_"+feature.properties.target);
+        var street=feature.properties.r_stname_c;
+          var place=feature.properties.r_placenam;
+          var showinfo="<ul><li>StreetName:"+street+"</li><li>PlaceName:"+place+"</li></ul>"
         if(i==0){
+        document.getElementById("clocation").innerHTML="<h6>Source Info</h6>"+showinfo;
        sos=feature.properties.source;
        text+="init_sou_"+sos+"<br/>";
         text+="init_tag_"+tag+"<br/>";
+
        }
        if(i==1){
         i=-1;
         tag=feature.properties.target;
           getShortestPath(sos,tag);
-
+       getGeoJSON(4617,"nrnbc90roadseg","gid,length",sos,tag,false,"","json","");
+       document.getElementById("destination").innerHTML="<h6>Destination Info</h6>"+showinfo;
         text+="finaal_sou_"+sos+"<br/>";
         text+="final_tag_"+tag+"<br/>";
         sos="";
         tag="";
         }
-        getShortestPath("","");
+      ///clocation
 
 
-         document.getElementById("tester").innerHTML=text+"</p>";
-        i++;
+        // document.getElementById("tester").innerHTML=text+"</p>";
+        i++; k++;
                         }
                 });
 
@@ -226,7 +227,7 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0;
                         vectorOptions: {
                             fillColor: "#304567",
                             fillOpacity: 0.4,
-                            weight: 20,
+                            weight: 6,
                             color: "#000000",
                             opacity: 1,
                             clickable: false
@@ -235,14 +236,17 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0;
                 });
 
                 function getShortestPath(source,target){
-
-                shorter = new lvector.PRWSF({
+                       if(k==3){
+                     shorter.setMap(null);
+                     k=1;
+                     }
+                 shorter = new lvector.PRWSF({
                     url: "http://localhost/postgis_api",
                     geotable: "nrnbc90roadseg",
                     fields: "gid",
                     uniqueField: "gid",
-                    source:source,
-                    target:target,
+                    source:sos,
+                    target:tag,
                     srid:4617,
                     showAll: true,
                     dynamic: true,
@@ -250,8 +254,10 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0;
                     symbology: {
                         type: "single",
                         vectorOptions: {
-
-                            weight: 10,
+                              strokeWeight: 1.8,
+                             strokeColor: "#2f4a00",
+                              strokeOpacity: 1,
+                            weight: 4,
                             color: "#D93600",
                             opacity: 1,
                             clickable: false
@@ -259,11 +265,15 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0;
                     }
                 });
                 if(source=="" || target==""){
-                shorter.setMap(null);
+
                 }else{
+
                  shorter.setMap(map1);
                  }
                 }
+
+
+
 
 </script>
 
