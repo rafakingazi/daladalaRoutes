@@ -47,11 +47,9 @@ demo {
 <p id='tester'></p>
 </div>
 <div class="span10  demo">
-<p>Habari vijana wetu</p>
+<p>Dar-es-salaam Daladala Routing</p>
   <div id="map-container-1" class="map" style='height:500px !important;'></div>
-    <div class="layer-buttons">
- <div class="row layer-button-row"><a href="javascript:prwsf_bus.setMap(map1);" class="btn success">Layer On</a> <a href="javascript:prwsf_bus.setMap(null);" class="btn danger">Layer Off</a></div>
-    </div>
+
 </div>
 </div>
 </div>
@@ -108,6 +106,7 @@ $.ajax({
     },
     dataType: "json",
     success: function(data) {
+    alert(data);
         $.each(data, function(i, mydatas) {
 
             console.log(mydatas);
@@ -122,16 +121,16 @@ $.ajax({
 }
 
 var ids=new Array(),mytarget=new Array(),mysource=new Array();
-
+var marker1,marker2;
 var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
 
  $(document).ready(function() {
 
 //var map = L.map('map-container-1').setView([52.9089, -124.4531], 13);
-//var geos=getGeoJSON(4617,"nrnbc90roadseg","gid,length","","",false,"","json","");
+//var geos=getGeoJSON(4617,"mylines","gid,length","","",false,"","json","");
    //document.getElementById("tester").innerHTML=geos.row.geojson;
                 map1 = new L.Map("map-container-1", {
-                    center: new L.LatLng(54.5721,-124.4531),
+                    center: new L.LatLng(-6.85553, 39.375),
                     zoom: 10,
                     minZoom: 4,
                     layers: [
@@ -141,14 +140,43 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
                         })
                     ]
                 });
+ marker1 = new L.marker(map1.getCenter());
+marker2 = new L.marker(map1.getCenter());
            //prwsf_bus.setMap(map1);
+           //ilala.setMap(map1);
+           //kino.setMap(map1);
+           road.setMap(map1);
 
-            kino.setMap(map1);
-            //teme.setMap(map1);
+         //   map1.on('click', onMapClick);
                 });
+
+                function onMapClick(e) {
+           markTile(e,e);
+    //alert("You clicked the map at " + e.latlng);
+}
+
+function markTile(feature,event,content){
+     if(i==0){
+     if(k==3){
+
+
+     }
+        map1.removeLayer(marker1);
+        marker1.setLatLng(event.latlng);
+        map1.addLayer(marker1);
+        }
+        if(i==1){
+       map1.removeLayer(marker2);
+       marker2.setLatLng(event.latlng);
+        map1.addLayer(marker2);
+
+        }
+    //.bindPopup(content)
+    //.openPopup();
+}
  prwsf_bus = new lvector.PRWSF({
                     url: "http://localhost/postgis_api",
-                    geotable: "nrnbc90roadseg",
+                    geotable: "temekedistrict",
                     fields: "gid",
                     uniqueField: "gid",
                     srid:4617,
@@ -156,20 +184,21 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
                     symbology: {
                         type: "single",
                         vectorOptions: {
-
-                            weight: 8,
+                           fillColor: "#304567",
+                            fillOpacity: 0.4,
+                            weight: 1,
                             color: "#000000",
                             opacity: 1,
                             clickable: false
                         }
                     }
                 });
-         kino = new lvector.PRWSF({
+         road = new lvector.PRWSF({
                     url: "http://localhost/postgis_api",
-                    geotable: "nrnbc90roadseg",
-                    fields: "gid,r_placenam,speed,r_stname_c,source,target",
+                    geotable: "dar_road2",
+                    fields: "gid,route,via,source,target",
                     uniqueField: "gid",
-                    srid:4629,
+                    srid:4617,
                     showAll: true,
                      symbology: {
                         type: "single",
@@ -186,24 +215,26 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
                     clickEvent: function (feature, event) {
 
         alert("gid is"+feature.properties.source+"_"+feature.properties.target);
-        var street=feature.properties.r_stname_c;
-          var place=feature.properties.r_placenam;
-          var showinfo="<ul><li>StreetName:"+street+"</li><li>PlaceName:"+place+"</li></ul>"
+        var street=feature.properties.route;
+          var place=feature.properties.via;
+          var showinfo="<ul><li>StreetName:"+street+"</li><li>PlaceName:"+place+"</li></ul>";
+            markTile(feature,event,showinfo);
         if(i==0){
-        document.getElementById("clocation").innerHTML="<h6>Source Info</h6>"+showinfo;
+
        sos=feature.properties.source;
        text+="init_sou_"+sos+"<br/>";
         text+="init_tag_"+tag+"<br/>";
-
+ document.getElementById("clocation").innerHTML="<h6>Source Info</h6>"+showinfo+"<br/>";
        }
        if(i==1){
         i=-1;
         tag=feature.properties.target;
           getShortestPath(sos,tag);
-       getGeoJSON(4617,"nrnbc90roadseg","gid,length",sos,tag,false,"","json","");
-       document.getElementById("destination").innerHTML="<h6>Destination Info</h6>"+showinfo;
+      // getGeoJSON(4617,"newroads","gid,length",sos,tag,false,"","json","");
+
         text+="finaal_sou_"+sos+"<br/>";
         text+="final_tag_"+tag+"<br/>";
+          document.getElementById("destination").innerHTML="<h6>Destination Info</h6>"+showinfo+"<br/>";
         sos="";
         tag="";
         }
@@ -215,9 +246,9 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
                         }
                 });
 
-            teme = new lvector.PRWSF({
+            ilala=  new lvector.PRWSF({
                     url: "http://localhost/postgis_api",
-                    geotable: "temekedistrict",
+                    geotable: "ilaladistrict",
                     fields: "gid",
                     uniqueField: "gid",
                     srid:4617,
@@ -225,9 +256,28 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
                     symbology: {
                         type: "single",
                         vectorOptions: {
-                            fillColor: "#304567",
+                           fillColor: "#304567",
                             fillOpacity: 0.4,
-                            weight: 6,
+                            weight: 1,
+                            color: "#000000",
+                            opacity: 1,
+                            clickable: false
+                        }
+                    }
+                });
+                kino= new lvector.PRWSF({
+                    url: "http://localhost/postgis_api",
+                    geotable: "kinondonidistrict",
+                    fields: "gid",
+                    uniqueField: "gid",
+                    srid:4617,
+                    showAll: true,
+                    symbology: {
+                        type: "single",
+                        vectorOptions: {
+                           fillColor: "#304567",
+                            fillOpacity: 0.4,
+                            weight: 1,
                             color: "#000000",
                             opacity: 1,
                             clickable: false
@@ -242,7 +292,7 @@ var i=0,text="<p>hapo vipi  ",tag=0,sos=0,updator="",k=0;
                      }
                  shorter = new lvector.PRWSF({
                     url: "http://localhost/postgis_api",
-                    geotable: "nrnbc90roadseg",
+                    geotable: "dar_road2",
                     fields: "gid",
                     uniqueField: "gid",
                     source:sos,

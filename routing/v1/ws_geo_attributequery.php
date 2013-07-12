@@ -39,10 +39,10 @@ catch (Exception $e) {
     trigger_error("Caught Exception: " . $e->getMessage(), E_USER_ERROR);
 }
 
-# Performs the query and returns XML or JSON
+# Performs the query and returns XML or JSON gid,st_asgeojson(st_transform(the_geom,4617)) as geojson
 try {
   if($source=="" && $target==""){
-	$sql = "select " . $fields . "   from  ". $geotable." ORDER BY gid ASC limit 9000 ";
+	$sql = "select " . $fields . "   from  ". $geotable."  limit 10000";
 	if (strlen(trim($parameters)) > 0) {$sql .= " where " . $parameters;}
 	$sql = sanitizeSQL($sql);
 	//echo $sql;
@@ -57,6 +57,9 @@ try {
 
     //This is the SQL query that joins the results of the shortest_path() query with the roads table to get the
     //associated geometries that comprise our shortest path
+      /*  $sql="select gid from  newroads
+            join (select * from shortest_path('select gid as id, source::integer, target::integer, length::double precision as cost from newroads', 128, 315, false, false)) as route
+            on newroads.gid = route.edge_id"*/
 
     $sql = "select ".$fields." from  ".$geotable."
             join (select * from shortest_path('".$innerSql."', ".$source.", ".$target.", false, false)) as route
